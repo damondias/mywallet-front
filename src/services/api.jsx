@@ -19,9 +19,16 @@ async function login(data) {
   return token;
 }
 
+async function createTransaction(token, entry) {
+  const config = createConfig(token);
+
+  await axios.post(`${BASE_URL}/users/transactions`, entry, config);
+}
+
 const api ={
     createUser,
     login,
+    createTransaction,
 }
 
 export default api;
