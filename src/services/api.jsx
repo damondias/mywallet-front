@@ -19,10 +19,10 @@ async function login(data) {
   return token;
 }
 
-async function createTransaction(token, entry) {
+async function createTransaction(token, entry, tipo) {
   const config = createConfig(token);
 
-  await axios.post(`${BASE_URL}/user/transactions`, entry, config);
+  await axios.post(`${BASE_URL}/nova-transacao/${tipo}`, entry, config);
 }
 
 async function getTransactions(token) {

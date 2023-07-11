@@ -26,7 +26,7 @@ function TransactionPage() {
     const transaction = { ...formData, type: tipo };
 
     try {
-      await api.createTransaction(user, transaction);
+      await api.createTransaction(user, transaction, tipo );
       setFormData({
         amount: '',
         description: '',
