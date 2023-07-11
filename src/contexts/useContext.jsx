@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (user) {
       location.pathname === '/' && navigate('/home');
-    } else if ( location.pathname ==! '/cadastro'){
+    } else if ( location.pathname === '/home'){
       navigate('/');
     }
   }, []); 
