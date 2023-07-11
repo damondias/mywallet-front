@@ -37,6 +37,7 @@ function HomePage() {
     return <h2>Carregando...</h2>
   }
 
+
   return (
     <Container alignSelf="flex-start" padding="0px 25px">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
@@ -76,6 +77,8 @@ function Transactions({ transactions, totalSum }) {
     )
   }
 
+ 
+
   return (
     <Container
       background="#FFF"
@@ -86,7 +89,7 @@ function Transactions({ transactions, totalSum }) {
       justifyContent="space-between"
     >
       <Flex direction="column">
-        {transactions.reverse.map(transaction => <Transaction key={transaction.id} {...transaction} />)}
+        { transactions.map(transaction => <Transaction key={transaction.id} {...transaction} />)}
       </Flex>
       <Flex direction="row" justifyContent="space-between" alignItems="center">
         <Span color="#000" bold>
