@@ -5,6 +5,7 @@ import api from '../../services/api';
 import { Container, Form, Input, Button } from '../../components/FormComponents';
 import { Title } from './TransactionStyle';
 import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router';
 
 function TransactionPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ function TransactionPage() {
   });
   const { user } = useAuth();
   const { tipo } = useParams();
+  const navigate = useNavigate();
 
   function handleChange({ target }) {
     setFormData({ ...formData, [target.name]: target.value });
@@ -29,6 +31,7 @@ function TransactionPage() {
         amount: '',
         description: '',
       })
+      navigate('/home');
     } catch (error) {
       console.log(error);
       alert("Erro, tente novamente");

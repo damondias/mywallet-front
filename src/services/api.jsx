@@ -22,13 +22,21 @@ async function login(data) {
 async function createTransaction(token, entry) {
   const config = createConfig(token);
 
-  await axios.post(`${BASE_URL}/users/transactions`, entry, config);
+  await axios.post(`${BASE_URL}/user/transactions`, entry, config);
+}
+
+async function getTransactions(token) {
+  const config = createConfig(token);
+
+  const user = await axios.get(`${BASE_URL}/user`, config);
+  return user;
 }
 
 const api ={
     createUser,
     login,
     createTransaction,
+    getTransactions,
 }
 
 export default api;

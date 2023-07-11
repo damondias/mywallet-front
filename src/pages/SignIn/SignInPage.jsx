@@ -31,7 +31,7 @@ function SignInPage() {
       console.log(error);
       alert("Erro, tente novamente");
     }
-  }
+  } 
 
   return (
     <Container>
