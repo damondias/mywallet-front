@@ -5,7 +5,7 @@ import { useAuth } from '../hooks';
 function LogoutButton() {
   const { logOut } = useAuth();
 
-  return <BiExit color="#FFF" size="24px" onClick={() => logOut()} />
+  return <BiExit  data-test="logout" color="#FFF" size="24px" onClick={() => logOut()} />
 }
 
 export default LogoutButton;

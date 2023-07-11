@@ -28,7 +28,7 @@ async function createTransaction(token, entry, tipo) {
 async function getTransactions(token) {
   const config = createConfig(token);
 
-  const user = await axios.get(`${BASE_URL}/user`, config);
+  const user = await axios.get(`${BASE_URL}/home`, config);
   return user;
 }
 
