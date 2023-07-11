@@ -43,6 +43,7 @@ function SignUpPage() {
       <Logo>MyWallet</Logo>
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="name"
           placeholder="Nome"
           type="text"
           onChange={(e) => handleChange(e)}
@@ -51,6 +52,7 @@ function SignUpPage() {
           required
         />
         <Input
+          data-test="email"
           placeholder="E-mail"
           type="email"
           onChange={(e) => handleChange(e)}
@@ -59,6 +61,7 @@ function SignUpPage() {
           required
         />
         <Input
+          data-test="password"
           placeholder="Senha"
           type="password"
           onChange={(e) => handleChange(e)}
@@ -67,6 +70,7 @@ function SignUpPage() {
           required
         />
         <Input
+          data-test="conf-password"
           placeholder="Confirme a senha"
           type="password"
           onChange={(e) => handleChange(e)}
@@ -74,7 +78,7 @@ function SignUpPage() {
           value={formData.confirmPassword}
           required
         />
-        <Button type="submit">Cadastrar</Button>
+        <Button data-test="sign-up-submit" type="submit">Cadastrar</Button>
       </Form>
       <StyledLink to="/">Já tem uma conta? Entre agora!</StyledLink>
     </Container>

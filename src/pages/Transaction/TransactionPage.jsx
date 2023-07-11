@@ -43,6 +43,7 @@ function TransactionPage() {
       <Title>Nova {tipo} </Title>
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="registry-amount-input"
           placeholder="Valor"
           type="number"
           onChange={(e) => handleChange(e)}
@@ -51,6 +52,7 @@ function TransactionPage() {
           required
         />
         <Input
+          data-test="registry-name-input"
           placeholder="Descrição"
           type="text"
           onChange={(e) => handleChange(e)}
@@ -58,7 +60,7 @@ function TransactionPage() {
           value={formData.description}
           required
         />
-        <Button type="submit">Salvar {tipo}</Button>
+        <Button data-test="registry-save" type="submit">Salvar {tipo}</Button>
       </Form>
     </Container>
   );

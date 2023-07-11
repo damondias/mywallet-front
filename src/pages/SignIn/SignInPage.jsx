@@ -38,6 +38,7 @@ function SignInPage() {
       <Logo>MyWallet</Logo>
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="email"
           placeholder="E-mail"
           type="email"
           onChange={(e) => handleChange(e)}
@@ -46,6 +47,7 @@ function SignInPage() {
           required
         />
         <Input
+          data-test="password"
           placeholder="Senha"
           type="password"
           onChange={(e) => handleChange(e)}
@@ -53,7 +55,7 @@ function SignInPage() {
           value={formData.password}
           required
         />
-        <Button type="submit">Entrar</Button>
+        <Button data-test="sign-in-submit" type="submit">Entrar</Button>
       </Form>
       <StyledLink to="/cadastro">Primeira vez? Cadastre-se!</StyledLink>
     </Container>

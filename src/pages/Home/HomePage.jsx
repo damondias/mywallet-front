@@ -40,16 +40,16 @@ function HomePage() {
   return (
     <Container alignSelf="flex-start" padding="0px 25px">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
-        <Title>Olá, {profile.name}</Title>
-        <LogoutButton />
+        <Title data-test="user-name">Olá, {profile.name}</Title>
+        <LogoutButton data-test="logout" />
       </Flex>
       <Transactions transactions={profile.transactions} totalSum={profile.totalSum} />
       <Flex direction="row" gap="15px">
-        <Button to="/nova-transacao/entrada">
+        <Button data-test="new-income" to="/nova-transacao/entrada">
           <AiOutlinePlusCircle />
           Nova entrada
         </Button>
-        <Button to="/nova-transacao/saida">
+        <Button data-test="new-expense" to="/nova-transacao/saida">
           <AiOutlineMinusCircle />
           Nova saída
         </Button>
@@ -92,7 +92,9 @@ function Transactions({ transactions, totalSum }) {
         <Span color="#000" bold>
           SALDO
         </Span>
-        <Span align="right" color={totalSum > 0 ? '#03AC00' : '#C70000'}>{formatAmount(totalSum)}</Span>
+        <Span  data-test="total-amount" align="right" color={totalSum > 0 ? '#03AC00' : '#C70000'}>
+          {formatAmount(totalSum)}
+        </Span>
       </Flex>
     </Container>
   )
@@ -105,11 +107,11 @@ function Transaction({ id, amount, description, type, createdAt }) {
         <Span color="#C6C6C6">
           {createdAt}
         </Span>
-        <Span color="#000">
+        <Span data-test="registry-name" color="#000">
           {description}
         </Span>
       </Flex>
-      <Span align="right" color={type === 'entrada' ? '#03AC00' : '#C70000'}>{formatAmount(amount)}</Span>
+      <Span  data-test="registry-amount" align="right" color={type === 'entrada' ? '#03AC00' : '#C70000'}>{formatAmount(amount)}</Span>
     </Flex>
   )
 }
