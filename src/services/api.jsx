@@ -11,11 +11,11 @@ function createConfig(token) {
 }
 
 async function createUser(user) {
-  await axios.post(`${BASE_URL}/auth/sign-up`, user);
+  await axios.post(`${BASE_URL}/cadastro`, user);
 }
 
 async function login(data) {
-  const token = await axios.post(`${BASE_URL}/auth/sign-in`, data);
+  const token = await axios.post(`${BASE_URL}`, data);
   return token;
 }
 
