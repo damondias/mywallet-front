@@ -86,7 +86,7 @@ function Transactions({ transactions, totalSum }) {
       justifyContent="space-between"
     >
       <Flex direction="column">
-        {transactions.map(transaction => <Transaction key={transaction.id} {...transaction} />)}
+        {transactions.reverse.map(transaction => <Transaction key={transaction.id} {...transaction} />)}
       </Flex>
       <Flex direction="row" justifyContent="space-between" alignItems="center">
         <Span color="#000" bold>
