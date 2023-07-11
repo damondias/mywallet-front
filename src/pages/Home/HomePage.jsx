@@ -41,7 +41,7 @@ function HomePage() {
     <Container alignSelf="flex-start" padding="0px 25px">
       <Flex direction="row" justifyContent="space-between" alignItems="center">
         <Title data-test="user-name">Olá, {profile.name}</Title>
-        <LogoutButton data-test="logout" />
+        <LogoutButton />
       </Flex>
       <Transactions transactions={profile.transactions} totalSum={profile.totalSum} />
       <Flex direction="row" gap="15px">
