@@ -11,7 +11,7 @@ function TransactionPage() {
     amount: '',
     description: '',
   });
-  const { setUser } = useAuth();
+  const { user } = useAuth();
   const { tipo } = useParams();
 
   function handleChange({ target }) {
@@ -24,7 +24,7 @@ function TransactionPage() {
     const transaction = { ...formData, type: tipo };
 
     try {
-      await api.createTransaction(setUser, transaction);
+      await api.createTransaction(user, transaction);
       setFormData({
         amount: '',
         description: '',
